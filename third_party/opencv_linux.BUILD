@@ -19,6 +19,7 @@ cc_library(
         #"include/arm-linux-gnueabihf/opencv4/opencv2/cvconfig.h",
         #"include/x86_64-linux-gnu/opencv4/opencv2/cvconfig.h",
         "include/opencv4/opencv2/**/*.h*",
+        #"include/opencv4/opencv2/*.h*",
     ]),
     includes = [
         # For OpenCV 4.x
@@ -28,6 +29,7 @@ cc_library(
         "include/opencv4/",
     ],
     linkopts = [
+        #"-L/usr/local/lib",
         "-l:libopencv_core.so",
         "-l:libopencv_calib3d.so",
         "-l:libopencv_features2d.so",
@@ -37,6 +39,6 @@ cc_library(
         "-l:libopencv_video.so",
         "-l:libopencv_videoio.so",
     ],
-    linkstatic = 1,
+    #linkstatic = 1,
     visibility = ["//visibility:public"],
 )
